@@ -37,7 +37,7 @@
   }
 }
 .todolist-wrapper{
-  border: 2px solid black;
+  /* border: 2px solid black; */
   max-width: 600px;
   width: 90%;
   margin: auto;

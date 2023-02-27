@@ -1,4 +1,7 @@
 .todo{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     margin-bottom : 1rem;
+    background: #273c75;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }
