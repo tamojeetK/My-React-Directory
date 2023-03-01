@@ -1,6 +1,8 @@
 import './App.css';
 // import HandleInputs from './components/HandleInputs';
 import Todo from './components/Todo';
+import TodoInputForm from './components/TodoInputForm';
+
 // import {uuid} from 'uuid';
 
 
@@ -16,10 +18,10 @@ function App() {
 
   return (
     <>
-      <h1>Todo List App</h1>
+      <h1 style={{ textAlign: "center" }}>Todo List App</h1>
       <div className="todolist-wrapper">
         {/* <HandleInputs></HandleInputs> */}
-
+        <TodoInputForm />
         {todos.map((todo) => {
           return <Todo todo={todo.todoName} />
         })}
