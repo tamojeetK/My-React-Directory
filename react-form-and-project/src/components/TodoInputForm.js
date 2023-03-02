@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 function TodoInputForm() {
+    const [todo, setTodo] = useState("");
 
     return (
         <form>
