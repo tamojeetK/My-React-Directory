@@ -6,8 +6,16 @@ function TodoInputForm() {
 
     return (
         <form>
-            <label htmlFor="todoForm">New Todo</label>
-            <input type="text" id="todoForm" />
+            <input
+                type="text"
+                id="todoForm"
+                value={todo}
+                onChange={(e) => {
+                    setTodo(e.target.value);
+                }}
+
+            />
+            <input type="submit" value="Add Todo" />
         </form>
     );
 }
