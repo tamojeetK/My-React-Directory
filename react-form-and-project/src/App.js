@@ -21,17 +21,34 @@ function App() {
     setTodo((prevTodo) => [...prevTodo, newTodo]);
   }
 
-  function deleteTodo(id) {
-    const newState = [];
-    for(let todo of todos){
-      if(todo.id !== id){
-        newState.push(todo);
-      }
-    }
 
-    setTodo(newState);
+  function deleteTodo(id) {
+    
+    // // imperative way
+    // const newState = [];
+    // for(let todo of todos){
+    //   if(todo.id !== id){
+    //     newState.push(todo); 
+    //   }
+    // }
+    // setTodo(newState);
+
+    // //using filtered array
+    // const newState  = todos.filter((todo)=>{
+    //   return todo.id !== id;
+    // });
+    // setTodo(newState);
+
+    // // implicit return
+    // const newState = todos.filter(todo => todo.id !== id);
+    // setTodo(newState);
+
+    //using setState callback and filter
+    setTodo((prevTodo)=> prevTodo.filter((prevTodo) => prevTodo.id !== id));
 
   }
+
+  
 
   return (
     <>
