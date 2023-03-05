@@ -13,7 +13,7 @@ function TodoInputForm({addTodo}) {
         const newTodoObj = {id: uuid(), todoName: newTodo, completed: true};
         addTodo(newTodoObj);
         setNewTodo("");
-        
+
     }
 
     // last did till here
