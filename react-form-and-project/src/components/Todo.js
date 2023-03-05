@@ -9,7 +9,9 @@ function Todo({ todoName, id, completed, deleteTodo }) {
             <h3>{todoName}</h3>
             <div className="button-wrapper">
                 <button>Complete</button>
-                <button>Delete</button>
+                <button onClick={() => {
+                    deleteTodo(id)
+                }}>Delete</button>
             </div>
         </div>
     );

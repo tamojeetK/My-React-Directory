@@ -22,7 +22,15 @@ function App() {
   }
 
   function deleteTodo(id) {
-    console.log(id);
+    const newState = [];
+    for(let todo of todos){
+      if(todo.id !== id){
+        newState.push(todo);
+      }
+    }
+
+    setTodo(newState);
+
   }
 
   return (
