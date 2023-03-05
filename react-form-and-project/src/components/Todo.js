@@ -2,13 +2,17 @@ import React from 'react'
 import "./Todo.css"
 
 
-function Todo({todo}){
+function Todo({ todoName, id, completed, deleteTodo }) {
 
     return (
         <div className="todo">
-            {todo}
+            <h3>{todoName}</h3>
+            <div className="button-wrapper">
+                <button>Complete</button>
+                <button>Delete</button>
+            </div>
         </div>
-        );
+    );
 }
 
 export default Todo;

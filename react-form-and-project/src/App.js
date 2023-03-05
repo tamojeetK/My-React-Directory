@@ -17,8 +17,12 @@ function App() {
 
   ])
 
-  function addTodo(newTodo){
-    setTodo((prevTodo)=>[...prevTodo, newTodo]);
+  function addTodo(newTodo) {
+    setTodo((prevTodo) => [...prevTodo, newTodo]);
+  }
+
+  function deleteTodo(id) {
+    console.log(id);
   }
 
   return (
@@ -26,9 +30,16 @@ function App() {
       <h1 style={{ textAlign: "center" }}>Todo List App</h1>
       <div className="todolist-wrapper">
         {/* <HandleInputs></HandleInputs> */}
-        <TodoInputForm addTodo={addTodo}/>
+        <TodoInputForm addTodo={addTodo} />
         {todos.map((todoObj) => {
-          return <Todo todo={todoObj.todoName} />
+          return (
+            <Todo
+              todoName={todoObj.todoName}
+              id={todoObj.id}
+              completed={todoObj.completed}
+              deleteTodo={deleteTodo}
+              key={todoObj.id} />
+          )
         })}
 
 
