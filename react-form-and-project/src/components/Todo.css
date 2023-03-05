@@ -1,10 +1,22 @@
 .todo{
     /* border: 2px solid red; */
     margin-bottom : 1rem;
-    background: #273c75;
+    background: #624F82;
+    box-shadow: black 0px 5px 30px -10px;
     padding: 0.5rem;
     border-radius: 0.5rem;
+    align-items: center;
 }
 .container{
+    
+}
+button{
+    border-radius: 0.4rem;
+    border: none;
+    padding: 0.4rem;
+    margin: 0.1rem;
+}
+button:focus{
+    background-color: gray;
     
 }
