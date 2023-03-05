@@ -1,12 +1,18 @@
 import React from "react";
 import { useState } from "react";
+import { v4 as uuid} from "uuid";
 import "./TodoInputForm.css"
 
-function TodoInputForm() {
-    const [todo, setTodo] = useState("");
+function TodoInputForm(addTodo) {
+
+    const [newTodo, setTodo] = useState("");
+
     function handleInput(e){
         e.preventDefault();
-        alert(todo);
+
+        const newTodoObj = {id: uuid(), todoName: newTodo, completed: false};
+        addTodo(newTodoObj);
+        
     }
 
     // last did till here
@@ -16,13 +22,13 @@ function TodoInputForm() {
             <input
                 type="text"
                 id="todoForm"
-                value={todo}
+                value={newTodo}
                 onChange={(e) => {
                     setTodo(e.target.value);
                 }}
 
             />
-            <input type="submit" value="Add Todo" />
+            <input type="submit" value="Add Todo" onClick={handleInput}/>
         </form>
     );
 }
