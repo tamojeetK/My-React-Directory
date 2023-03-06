@@ -2,10 +2,19 @@
     /* border: 2px solid red; */
     margin-bottom : 1rem;
     background: #624F82;
-    box-shadow: black 0px 5px 30px -10px;
+    box-shadow: rgb(0, 0, 0) 0px 5px 30px -10px;
     padding: 0.5rem;
     border-radius: 0.5rem;
     align-items: center;
+    text-transform: capitalize;
+}
+
+/* Hover Effects */
+.todo:hover{
+    transition: 0.5s all ease-in-out;
+    transform: scale(1.05);
+    background: #856dae;
+
 }
 .container{
     
@@ -15,6 +24,7 @@ button{
     border: none;
     padding: 0.4rem;
     margin: 0.1rem;
+    
 }
 button:focus{
     background-color: gray;
