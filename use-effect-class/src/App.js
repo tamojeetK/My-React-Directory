@@ -15,7 +15,6 @@ function App() {
   }, [counter1, counter2]);
 
 
-
   return (
     <div className="App">
     <h3>Counter App 1</h3>
