@@ -10,14 +10,12 @@ function TodoInputForm({addTodo}) {
     function handleInput(e){
         e.preventDefault();
 
-        const newTodoObj = {id: uuid(), todoName: newTodo, completed: true};
+        const newTodoObj = {id: uuid(), todoName: newTodo, completed: false};
         addTodo(newTodoObj);
         setNewTodo("");
 
     }
-
-    // last did till here
-
+    
     return (
         <form className="container" onSubmit={handleInput}>
             <input
