@@ -10,10 +10,10 @@ import TodoInputForm from './components/TodoInputForm';
 function App() {
 
   const [todos, setTodo] = useState([
-    { id: 1, todoName: "Take notes", completed: false },
-    { id: 2, todoName: "Cook food", completed: false },
-    { id: 3, todoName: "Learn React", completed: false },
-    { id: 4, todoName: "Go to Sleep", completed: false }
+    { id: 1, todoName: "Take notes", completed: true },
+    { id: 2, todoName: "Cook food", completed: true },
+    { id: 3, todoName: "Learn React", completed: true },
+    { id: 4, todoName: "Go to Sleep", completed: true }
 
   ])
 
