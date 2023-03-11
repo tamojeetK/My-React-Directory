@@ -2,16 +2,24 @@ import React from 'react'
 import "./Todo.css"
 
 
-function Todo({ todoName, id, completed, deleteTodo }) {
+function Todo({ todoName, id, completed, deleteTodo, toggleCompleted }) {
 
     return (
         <div className="todo">
-            <h3>{todoName}</h3>
+            {/* <h3 className={`todoName ${completed ? "completed" : ""}`}>{todoName}</h3> */}
+            <h3 className={`todoName ${completed ? "completed" : ""}`}>{todoName}</h3>
+            
             <div className="button-wrapper">
-                <button>Complete</button>
+                <button onClick={() => {
+                    toggleCompleted(id)
+                }}>
+                    {completed ? "Un-Complete" : "Complete"}
+                </button>
                 <button onClick={() => {
                     deleteTodo(id)
-                }}>Delete</button>
+                }}>
+                    Delete
+                </button>
             </div>
         </div>
     );
