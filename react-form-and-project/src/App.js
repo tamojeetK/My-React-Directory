@@ -10,10 +10,10 @@ import TodoInputForm from './components/TodoInputForm';
 function App() {
 
   const [todos, setTodo] = useState([
-    { id: 1, todoName: "Take notes", completed: true },
-    { id: 2, todoName: "Cook food", completed: true },
-    { id: 3, todoName: "Learn React", completed: true },
-    { id: 4, todoName: "Go to Sleep", completed: true }
+    { id: 1, todoName: "Take notes", completed: false },
+    { id: 2, todoName: "Cook food", completed: false },
+    { id: 3, todoName: "Learn React", completed: false },
+    { id: 4, todoName: "Go to Sleep", completed: false }
 
   ])
 
@@ -21,6 +21,20 @@ function App() {
     setTodo((prevTodo) => [...prevTodo, newTodo]);
   }
 
+  function toggleCompleted(id) {  // << here "id" ka naam kuchh bhi de sakte hain zaroori nahi ki sirf id hi ho, but Todo.js mein afterall we are assigning the id prop to this toggleCompleted
+    // console.log(id)
+
+    setTodo((prevTodo) =>
+      prevTodo.map((todoObj) => {
+
+        if (todoObj.id == id) {
+          return { ...todoObj, completed: !todoObj.completed };
+        } else {
+          return todoObj;
+        }
+      })
+    )
+  }
 
   function deleteTodo(id) {
 
@@ -48,20 +62,7 @@ function App() {
 
   }
 
-  function toggleCompleted(id) {  // << here "id" ka naam kuchh bhi de sakte hain zaroori nahi ki sirf id hi ho, but Todo.js mein afterall we are assigning the id prop to this toggleCompleted
-    // console.log(id)
 
-    setTodo((prevTodo) =>
-      prevTodo.map((todoObj) => {
-
-        if (todoObj.id == id) {
-          return { ...todoObj, completed: !todoObj.completed };
-        } else {
-          return todoObj;
-        }
-      })
-    )
-  }
 
 
   return (
@@ -70,17 +71,24 @@ function App() {
       <div className="todolist-wrapper">
         {/* <HandleInputs></HandleInputs> */}
         <TodoInputForm addTodo={addTodo} />
-        {todos.map((todoObj) => {
-          return (
-            <Todo
-              todoName={todoObj.todoName}
-              id={todoObj.id}
-              completed={todoObj.completed}
-              deleteTodo={deleteTodo}
-              toggleCompleted={toggleCompleted}
-              key={todoObj.id} />
-          )
-        })}
+        <div className="container">
+          {todos.map((todoObj) => {
+            return (
+              <Todo
+                todoName={todoObj.todoName}
+                id={todoObj.id}
+                completed={todoObj.completed}
+                deleteTodo={deleteTodo}
+                toggleCompleted={toggleCompleted}
+                key={todoObj.id}
+              />
+            );
+          })}
+
+          <button onClick={() => {
+            setTodo([])
+          }} disabled={todos.length===0 ? true : false}>Clear All</button>
+        </div>
 
 
       </div>
