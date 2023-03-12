@@ -35,6 +35,7 @@ button:focus{
     text-transform: capitalize;
 }
 .completed{
+    color: #211f38;
     text-decoration: line-through;
     opacity: 0.5;
 }
