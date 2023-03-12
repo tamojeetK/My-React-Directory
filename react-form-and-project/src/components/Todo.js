@@ -1,7 +1,6 @@
 import React from 'react'
 import "./Todo.css"
 
-
 function Todo({ todoName, id, completed, deleteTodo, toggleCompleted }) {
 
     return (
@@ -13,7 +12,7 @@ function Todo({ todoName, id, completed, deleteTodo, toggleCompleted }) {
                 <button onClick={() => {
                     toggleCompleted(id)
                 }}>
-                    {completed ? "Un-Complete" : "Complete"}
+                    {completed ? "❌" : "✔️"}
                 </button>
                 <button onClick={() => {
                     deleteTodo(id)
