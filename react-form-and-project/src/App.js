@@ -87,7 +87,7 @@ function App() {
 
           <button onClick={() => {
             setTodo([])
-          }} disabled={todos.length===0 ? true : false}>Clear All</button>
+          }} disabled={todos.length === 0 ? true : false}>Clear All</button>
         </div>
 
 
