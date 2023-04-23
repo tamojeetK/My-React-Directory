@@ -9,6 +9,10 @@ function TodoInputForm({addTodo}) {
 
     function handleInput(e){
         e.preventDefault();
+        if(newTodo.length === 0){
+            alert("Enter some value");
+            return;
+        }
 
         const newTodoObj = {id: uuid(), todoName: newTodo, completed: false};
         addTodo(newTodoObj);

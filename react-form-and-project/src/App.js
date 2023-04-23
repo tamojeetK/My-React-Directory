@@ -18,6 +18,10 @@ function App() {
 
   function addTodo(newTodo) {
     setTodo((prevTodo) => [...prevTodo, newTodo]);
+
+    if(newTodo){
+      
+    }
   }
 
   function toggleCompleted(id) {  // << here "id" ka naam kuchh bhi de sakte hain zaroori nahi ki sirf id hi ho, but Todo.js mein afterall we are assigning the id prop to this toggleCompleted
@@ -66,6 +70,7 @@ function App() {
 
   return (
     <>
+    <div className='toast'>Enter Some value</div>
       <h1 style={{ textAlign: "center" }}>Todo List App</h1>
       <div className="todolist-wrapper">
         {/* <HandleInputs></HandleInputs> */}
